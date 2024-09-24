@@ -39,17 +39,6 @@ listener.Prefixes.Add($"http://*:{port}/");
 listener.Start();
 Console.WriteLine($"Listening on http://*:{port}/");
 
-while (true)
-{
-    var context = listener.GetContext();
-    var response = context.Response;
-    var responseString = "Bot is running";
-    var buffer = System.Text.Encoding.UTF8.GetBytes(responseString);
-    response.ContentLength64 = buffer.Length;
-    var output = response.OutputStream;
-    output.Write(buffer, 0, buffer.Length);
-    output.Close();
-}
 
 // Handle updates from Telegram
 async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
