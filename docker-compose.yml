@@ -10,5 +10,6 @@ services:
       MYSQL_PASSWORD: Pashok0103
     ports:
       - "3306:3306"
+      - "80:80"
     volumes:
       - ./data:/var/lib/mysql

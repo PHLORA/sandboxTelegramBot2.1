@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Net;
+using System.Text.RegularExpressions;
 using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Polling;
@@ -6,7 +7,6 @@ using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 using TgBot;
-
 
 var cts = new CancellationTokenSource();
 var botClient = new TelegramBotClient("6454828135:AAHEClrhq9RF44QFQVyKSqz1EiYahklMVlo");
@@ -24,10 +24,32 @@ botClient.StartReceiving(
     cancellationToken: cts.Token
 );
 
+//Для работы приложения на сервере
 var me = await botClient.GetMeAsync();
 Console.WriteLine($"@{me.Username} is running... Press Enter to terminate");
 Console.ReadLine();
 cts.Cancel(); 
+
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+Console.WriteLine($"Application is listening on port {port}");
+
+// Симуляция прослушивания порта, чтобы удовлетворить Render:
+var listener = new HttpListener();
+listener.Prefixes.Add($"http://*:{port}/");
+listener.Start();
+Console.WriteLine($"Listening on http://*:{port}/");
+
+while (true)
+{
+    var context = listener.GetContext();
+    var response = context.Response;
+    var responseString = "Bot is running";
+    var buffer = System.Text.Encoding.UTF8.GetBytes(responseString);
+    response.ContentLength64 = buffer.Length;
+    var output = response.OutputStream;
+    output.Write(buffer, 0, buffer.Length);
+    output.Close();
+}
 
 // Handle updates from Telegram
 async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)

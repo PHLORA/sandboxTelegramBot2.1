@@ -2331,11 +2331,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Павел\\Documents\\GitHub\\sandboxTelegramBot2.0\\TgBot\\TgBot.csproj",
+      "projectUniqueName": "C:\\Users\\Павел\\Documents\\GitHub\\sandboxTelegramBot2.0\\sandboxTelegramBot\\TgBot\\TgBot.csproj",
       "projectName": "TgBot",
-      "projectPath": "C:\\Users\\Павел\\Documents\\GitHub\\sandboxTelegramBot2.0\\TgBot\\TgBot.csproj",
+      "projectPath": "C:\\Users\\Павел\\Documents\\GitHub\\sandboxTelegramBot2.0\\sandboxTelegramBot\\TgBot\\TgBot.csproj",
       "packagesPath": "C:\\Users\\Павел\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Павел\\Documents\\GitHub\\sandboxTelegramBot2.0\\TgBot\\obj\\",
+      "outputPath": "C:\\Users\\Павел\\Documents\\GitHub\\sandboxTelegramBot2.0\\sandboxTelegramBot\\TgBot\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Павел\\AppData\\Roaming\\NuGet\\NuGet.Config",

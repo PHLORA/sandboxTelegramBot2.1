@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TgBot
-build_property.ProjectDir = C:\Users\Павел\Documents\GitHub\sandboxTelegramBot2.0\TgBot\
+build_property.ProjectDir = C:\Users\Павел\Documents\GitHub\sandboxTelegramBot2.0\sandboxTelegramBot\TgBot\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
